@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Wellness Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sentiment@5.0.2/dist/sentiment.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Student Wellness & Mental Health Monitoring</h1>
+    </header>
+    <main>
+        <section id="checkin">
+            <h2>Daily Mood Check-In</h2>
+            <form id="moodForm">
+                <label for="mood" id="moodLabel">How are you feeling today? (1-10)</label>
+                <input type="range" id="mood" min="1" max="10" value="5" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5" aria-labelledby="moodLabel">
+                <span id="moodValue" aria-live="polite">5</span>
+                <label for="thoughts" id="thoughtsLabel">Share your thoughts (optional):</label>
+                <textarea id="thoughts" rows="4" placeholder="What's on your mind?" aria-labelledby="thoughtsLabel"></textarea>
+                <button type="submit">Submit Check-In</button>
+            </form>
+        </section>
+        <section id="dashboard">
+            <h2>Your Wellness Dashboard</h2>
+            <div id="recommendations">
+                <h3>Personalized Recommendations</h3>
+                <ul id="recList"></ul>
+            </div>
+            <div id="chartContainer">
+                <canvas id="moodChart"></canvas>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
